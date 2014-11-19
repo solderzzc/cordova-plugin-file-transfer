@@ -20,10 +20,10 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="org.apache.cordova.file-transfer"
-    version="0.4.8-dev">
+    id="com.file-transfer.baidu.bcs"
+    version="0.4.9-dev">
     <name>File Transfer</name>
-    <description>Cordova File Transfer Plugin</description>
+    <description>Cordova File Transfer Plugin for Baidu BCS</description>
     <license>Apache 2.0</license>
     <keywords>cordova,file,transfer</keywords>
     <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-file-transfer.git</repo>
