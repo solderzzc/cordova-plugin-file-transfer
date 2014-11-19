@@ -23,7 +23,7 @@
  * FileTransferError
  * @constructor
  */
-var FileTransferError = function(code, source, target, status, body, exception) {
+var FileTransferBCSError = function(code, source, target, status, body, exception) {
     this.code = code || null;
     this.source = source || null;
     this.target = target || null;
@@ -32,10 +32,10 @@ var FileTransferError = function(code, source, target, status, body, exception) 
     this.exception = exception || null;
 };
 
-FileTransferError.FILE_NOT_FOUND_ERR = 1;
-FileTransferError.INVALID_URL_ERR = 2;
-FileTransferError.CONNECTION_ERR = 3;
-FileTransferError.ABORT_ERR = 4;
-FileTransferError.NOT_MODIFIED_ERR = 5;
+FileTransferBCSError.FILE_NOT_FOUND_ERR = 1;
+FileTransferBCSError.INVALID_URL_ERR = 2;
+FileTransferBCSError.CONNECTION_ERR = 3;
+FileTransferBCSError.ABORT_ERR = 4;
+FileTransferBCSError.NOT_MODIFIED_ERR = 5;
 
-module.exports = FileTransferError;
+module.exports = FileTransferBCSError;

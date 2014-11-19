@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package org.apache.cordova.filetransfer;
+package com.filetransfer.baidu.bcs;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;

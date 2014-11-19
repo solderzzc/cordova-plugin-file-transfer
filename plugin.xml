@@ -21,7 +21,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.file-transfer.baidu.bcs"
-    version="0.4.9-dev">
+    version="0.4.18">
     <name>File Transfer</name>
     <description>Cordova File Transfer Plugin for Baidu BCS</description>
     <license>Apache 2.0</license>
@@ -32,19 +32,19 @@
     <!-- dependency id="org.apache.cordova.file@1" /-->
     <dependency id="org.apache.cordova.file" version=">=1.0.1" />
 
-    <js-module src="www/FileTransferError.js" name="FileTransferError">
-        <clobbers target="window.FileTransferError" />
+    <js-module src="www/FileTransferBCSError.js" name="FileTransferBCSError">
+        <clobbers target="window.FileTransferBCSError" />
     </js-module>
 
-    <js-module src="www/FileTransfer.js" name="FileTransfer">
-        <clobbers target="window.FileTransfer" />
+    <js-module src="www/FileTransferBCS.js" name="FileTransferBCS">
+        <clobbers target="window.FileTransferBCS" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="FileTransfer" >
-                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
+            <feature name="FileTransferBCS" >
+                <param name="android-package" value="com.filetransfer.baidu.bcs"/>
             </feature>
         </config-file>
 
@@ -52,16 +52,16 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
-        <source-file src="src/android/FileTransfer.java" target-dir="src/org/apache/cordova/filetransfer" />
-        <source-file src="src/android/FileProgressResult.java" target-dir="src/org/apache/cordova/filetransfer" />
-        <source-file src="src/android/FileUploadResult.java" target-dir="src/org/apache/cordova/filetransfer" />
+        <source-file src="src/android/FileTransfer.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileProgressResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileUploadResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
     </platform>
 
     <!-- amamzon-fireos -->
     <platform name="amazon-fireos">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="FileTransfer" >
-                <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer"/>
+            <feature name="FileTransferBCS" >
+                <param name="android-package" value="com.filetransfer.baidu.bcs"/>
             </feature>
         </config-file>
 
@@ -69,9 +69,9 @@
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
 
-        <source-file src="src/amazon/FileTransfer.java" target-dir="src/org/apache/cordova/filetransfer" />
-        <source-file src="src/android/FileProgressResult.java" target-dir="src/org/apache/cordova/filetransfer" />
-        <source-file src="src/android/FileUploadResult.java" target-dir="src/org/apache/cordova/filetransfer" />
+        <source-file src="src/amazon/FileTransfer.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileProgressResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileUploadResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
     </platform>
     
     <!-- ubuntu -->
@@ -99,12 +99,12 @@
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="FileTransfer">
-                <param name="ios-package" value="CDVFileTransfer" />
+            <feature name="FileTransferBCS">
+                <param name="ios-package" value="CDVFileTransferBCS" />
             </feature>
         </config-file>
-        <header-file src="src/ios/CDVFileTransfer.h" />
-        <source-file src="src/ios/CDVFileTransfer.m" />
+        <header-file src="src/ios/CDVFileTransferBCS.h" />
+        <source-file src="src/ios/CDVFileTransferBCS.m" />
 
         <framework src="AssetsLibrary.framework" />
     </platform>

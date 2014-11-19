@@ -21,7 +21,7 @@
 
 var argscheck = require('cordova/argscheck'),
     exec = require('cordova/exec'),
-    FileTransferError = require('./FileTransferError'),
+    FileTransferBCSError = require('./FileTransferBCSError'),
     ProgressEvent = require('org.apache.cordova.file.ProgressEvent');
 
 function newProgressEvent(result) {
@@ -66,10 +66,10 @@ function getBasicAuthHeader(urlString) {
 var idCounter = 0;
 
 /**
- * FileTransfer uploads a file to a remote server.
+ * FileTransferBCS uploads a file to a remote server.
  * @constructor
  */
-var FileTransfer = function() {
+var FileTransferBCS = function() {
     this._id = ++idCounter;
     this.onprogress = null; // optional callback
 };
@@ -84,8 +84,8 @@ var FileTransfer = function() {
 * @param options {FileUploadOptions} Optional parameters such as file name and mimetype
 * @param trustAllHosts {Boolean} Optional trust all hosts (e.g. for self-signed certs), defaults to false
 */
-FileTransfer.prototype.upload = function(filePath, server, successCallback, errorCallback, options, trustAllHosts) {
-    argscheck.checkArgs('ssFFO*', 'FileTransfer.upload', arguments);
+FileTransferBCS.prototype.upload = function(filePath, server, successCallback, errorCallback, options, trustAllHosts) {
+    argscheck.checkArgs('ssFFO*', 'FileTransferBCS.upload', arguments);
     // check for options
     var fileKey = null;
     var fileName = null;
@@ -126,7 +126,7 @@ FileTransfer.prototype.upload = function(filePath, server, successCallback, erro
     }
 
     var fail = errorCallback && function(e) {
-        var error = new FileTransferError(e.code, e.source, e.target, e.http_status, e.body, e.exception);
+        var error = new FileTransferBCSError(e.code, e.source, e.target, e.http_status, e.body, e.exception);
         errorCallback(error);
     };
 
@@ -140,7 +140,7 @@ FileTransfer.prototype.upload = function(filePath, server, successCallback, erro
             successCallback && successCallback(result);
         }
     };
-    exec(win, fail, 'FileTransfer', 'upload', [filePath, server, fileKey, fileName, mimeType, params, trustAllHosts, chunkedMode, headers, this._id, httpMethod]);
+    exec(win, fail, 'FileTransferBCS', 'upload', [filePath, server, fileKey, fileName, mimeType, params, trustAllHosts, chunkedMode, headers, this._id, httpMethod]);
 };
 
 /**
@@ -152,8 +152,8 @@ FileTransfer.prototype.upload = function(filePath, server, successCallback, erro
  * @param trustAllHosts {Boolean} Optional trust all hosts (e.g. for self-signed certs), defaults to false
  * @param options {FileDownloadOptions} Optional parameters such as headers
  */
-FileTransfer.prototype.download = function(source, target, successCallback, errorCallback, trustAllHosts, options) {
-    argscheck.checkArgs('ssFF*', 'FileTransfer.download', arguments);
+FileTransferBCS.prototype.download = function(source, target, successCallback, errorCallback, trustAllHosts, options) {
+    argscheck.checkArgs('ssFF*', 'FileTransferBCS.download', arguments);
     var self = this;
 
     var basicAuthHeader = getBasicAuthHeader(source);
@@ -194,19 +194,19 @@ FileTransfer.prototype.download = function(source, target, successCallback, erro
     };
 
     var fail = errorCallback && function(e) {
-        var error = new FileTransferError(e.code, e.source, e.target, e.http_status, e.body, e.exception);
+        var error = new FileTransferBCSError(e.code, e.source, e.target, e.http_status, e.body, e.exception);
         errorCallback(error);
     };
 
-    exec(win, fail, 'FileTransfer', 'download', [source, target, trustAllHosts, this._id, headers]);
+    exec(win, fail, 'FileTransferBCS', 'download', [source, target, trustAllHosts, this._id, headers]);
 };
 
 /**
  * Aborts the ongoing file transfer on this object. The original error
  * callback for the file transfer will be called if necessary.
  */
-FileTransfer.prototype.abort = function() {
-    exec(null, null, 'FileTransfer', 'abort', [this._id]);
+FileTransferBCS.prototype.abort = function() {
+    exec(null, null, 'FileTransferBCS', 'abort', [this._id]);
 };
 
-module.exports = FileTransfer;
+module.exports = FileTransferBCS;
