@@ -285,8 +285,8 @@ public class FileTransferBCS extends CordovaPlugin {
                 int fixedLength = -1;
                 try {
                     // Create return object
-                    FileUploadResult result = new FileUploadResult();
-                    FileProgressResult progress = new FileProgressResult();
+                    FileUploadBCSResult result = new FileUploadBCSResult();
+                    FileProgressBCSResult progress = new FileProgressBCSResult();
 
                     //------------------ CLIENT REQUEST
                     // Open a HTTP connection to the URL based on protocol
@@ -724,7 +724,7 @@ public class FileTransferBCS extends CordovaPlugin {
                     
                     Log.d(LOG_TAG, "Download file:" + sourceUri);
 
-                    FileProgressResult progress = new FileProgressResult();
+                    FileProgressBCSResult progress = new FileProgressBCSResult();
 
                     if (isLocalTransfer) {
                         readResult = resourceApi.openForRead(sourceUri);

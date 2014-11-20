@@ -21,7 +21,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.file-transfer.baidu.bcs"
-    version="0.4.21">
+    version="0.4.22">
     <name>File Transfer</name>
     <description>Cordova File Transfer Plugin for Baidu BCS</description>
     <license>Apache 2.0</license>
@@ -53,8 +53,8 @@
         </config-file>
 
         <source-file src="src/android/FileTransferBCS.java" target-dir="src/com/filetransfer/baidu/bcs" />
-        <source-file src="src/android/FileProgressResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
-        <source-file src="src/android/FileUploadResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileProgressBCSResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileUploadBCSResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
     </platform>
 
     <!-- amamzon-fireos -->
@@ -70,8 +70,8 @@
         </config-file>
 
         <source-file src="src/amazon/FileTransferBCS.java" target-dir="src/com/filetransfer/baidu/bcs" />
-        <source-file src="src/android/FileProgressResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
-        <source-file src="src/android/FileUploadResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileProgressBCSResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
+        <source-file src="src/android/FileUploadBCSResult.java" target-dir="src/com/filetransfer/baidu/bcs" />
     </platform>
     
     <!-- ubuntu -->

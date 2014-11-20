@@ -24,7 +24,7 @@ import org.json.JSONObject;
 /**
  * Encapsulates in-progress status of uploading or downloading a file to a remote server.
  */
-public class FileProgressResult {
+public class FileProgressBCSResult {
 
     private boolean lengthComputable = false; // declares whether total is known
     private long loaded = 0;                  // bytes sent so far

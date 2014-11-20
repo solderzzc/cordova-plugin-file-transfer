@@ -24,7 +24,7 @@ import org.json.JSONObject;
 /**
  * Encapsulates the result and/or status of uploading a file to a remote server.
  */
-public class FileUploadResult {
+public class FileUploadBCSResult {
 
     private long bytesSent = 0;         // bytes sent
     private int responseCode = -1;      // HTTP response code
