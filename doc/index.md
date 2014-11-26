@@ -19,6 +19,8 @@
 
 # org.apache.cordova.file-transfer
 
+# The only change form offical is use FileTransferBCS instead of FileTransfer in you js code.
+
 This plugin allows you to upload and download files.
 
 This plugin defines global `FileTransfer`, `FileUploadOptions` Constructors.

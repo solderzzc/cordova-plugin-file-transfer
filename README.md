@@ -17,6 +17,8 @@
          under the License.
 -->
 
-# org.apache.cordova.file-transfer
+# forked from org.apache.cordova.file-transfer
+
+The only change is use FileTransferBCS instead of FileTransfer in you js code.
 
 Plugin documentation: [doc/index.md](doc/index.md)
