@@ -50,6 +50,7 @@
 
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
 
         <source-file src="src/android/FileTransferBCS.java" target-dir="src/com/filetransfer/baidu/bcs" />
