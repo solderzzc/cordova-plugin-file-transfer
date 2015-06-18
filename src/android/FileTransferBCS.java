@@ -83,7 +83,7 @@ public class FileTransferBCS extends CordovaPlugin {
 
     private XWalkCookieManager mCookieManager = null;
 
-    public FileTransfer() {
+    public FileTransferBCS() {
         mCookieManager = new XWalkCookieManager();
     }
 
