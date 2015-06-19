@@ -695,13 +695,14 @@ public class FileTransferBCS extends CordovaPlugin {
         }
         
         // TODO: refactor to also allow resources & content:
+        /*
         if (!isLocalTransfer) {
             Log.w(LOG_TAG, "Source URL is not in white list: '" + source + "'");
             JSONObject error = createFileTransferError(CONNECTION_ERR, source, target, null, 401, null);
             callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.IO_EXCEPTION, error));
             return;
         }
-
+        */
         
         final RequestContext context = new RequestContext(source, target, callbackContext);
         synchronized (activeRequests) {
