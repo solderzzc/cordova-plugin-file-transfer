@@ -29,8 +29,7 @@
     <repo>https://github.com/solderzzc/cordova-plugin-file-transfer.git</repo>
     <issue></issue>
 
-    <!-- dependency id="org.apache.cordova.file@1" /-->
-    <dependency id="org.apache.cordova.file" version=">=1.0.1" />
+    <dependency id="cordova-plugin-file" version=">=1.0.1" />
 
     <js-module src="www/FileTransferBCSError.js" name="FileTransferBCSError">
         <clobbers target="window.FileTransferBCSError" />
